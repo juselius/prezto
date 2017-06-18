@@ -1,10 +1,10 @@
 setopt nobeep histbeep complete_in_word auto_pushd pushd_minus
-setopt pushd_ignore_dups extended_glob 
+setopt pushd_ignore_dups extended_glob
 setopt no_bg_nice hist_ignore_dups hist_allow_clobber ignore_eof
 setopt list_types no_auto_remove_slash no_notify
 setopt autocd hist_verify multios
 setopt nocorrect clobber
-  
+
 limit coredumpsize 0
 umask 022
 fignore=(.o ~)
@@ -15,7 +15,7 @@ export EDITOR=vim
 export PAGER=less
 # export LESS=-MiSXR
 
-source "${0:h}/completion.zsh"
+#source "${0:h}/completion.zsh"
 source "${0:h}/keybindings.zsh"
 source "${0:h}/hash-d.zsh"
 

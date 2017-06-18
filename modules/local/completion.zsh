@@ -20,7 +20,7 @@ zstyle ':completion:all-matches:*' old-matches true
 zstyle ':completion:all-matches:*' insert true
 # zle -C all-matches complete-word _generic
 
-# autoload -U incremental-complete-word predict-on
-# zle -N incremental-complete-word
-# zle -N predict-on
+autoload -U incremental-complete-word predict-on
+zle -N incremental-complete-word
+zle -N predict-on
 # zle -N predict-off

@@ -1,22 +1,26 @@
 # vim:ft=zsh
 
-#bindkey '^i' complete-word
-bindkey '^Y' all-matches
-bindkey '^i' expand-or-complete-prefix
-bindkey "\eOF" vi-end-of-line
-bindkey "\eOH" vi-beginning-of-line
-bindkey '^R' history-beginning-search-backward
-bindkey '^N' history-beginning-search-forward
-bindkey '\e[3~' delete-char
-bindkey '\e[A' up-line-or-history
-bindkey '\e[B' down-line-or-history
-bindkey '^F' vi-forward-word
-bindkey '^B' vi-backward-word
 bindkey '^P' push-line-or-edit
+bindkey '^A' beginning-of-line
+bindkey '^E' end-of-line
+bindkey 'd' delete-word
+
+#bindkey '^i' complete-word
+# bindkey '^Y' all-matches
+# bindkey '^i' expand-or-complete-prefix
+# bindkey "\eOF" vi-end-of-line
+# bindkey "\eOH" vi-beginning-of-line
+# bindkey '^R' history-beginning-search-backward
+# bindkey '^N' history-beginning-search-forward
+# bindkey '\e[3~' delete-char
+# bindkey '\e[A' up-line-or-history
+# bindkey '\e[B' down-line-or-history
+# bindkey '^F' vi-forward-word
+# bindkey '^B' vi-backward-word
 
 ##
 ## vi mode settings
-## 
+##
 # bindkey -v # use vi-mode
 # bindkey -M viins "§" which-command
 # bindkey -M viins "^A" vi-beginning-of-line
