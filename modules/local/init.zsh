@@ -12,6 +12,7 @@ fignore=(.o ~)
 KEYTIMEOUT=1
 DIRSTACKSIZE=10
 export EDITOR=vim
+export VISUAL=vim
 export PAGER=less
 # export LESS=-MiSXR
 
@@ -31,7 +32,7 @@ if [ -r ~/.aliases ]; then
     . ~/.aliases
 fi
 
-autoload ndir autobg
+autoload autobg
 
 function precmd() {
     autobg
@@ -39,9 +40,11 @@ function precmd() {
 
 [ -f ~/.bcrc ] &&  export BC_ENV_ARGS="-l $HOME/.bcrc"
 
-NIX_GHC_VERSION=$(ghc --numeric-version)
-export NIX_GHC="$HOME/.nix-profile/bin/ghc"
-export NIX_GHCPKG="$HOME/.nix-profile/bin/ghc-pkg"
-export NIX_GHC_DOCDIR="$HOME/.nix-profile/share/doc/ghc/html"
-export NIX_GHC_LIBDIR="$HOME/.nix-profile/lib/ghc-${NIX_GHC_VERSION}"
+if (( ! $+commands[ghc] )); then
+    NIX_GHC_VERSION=$(ghc --numeric-version)
+    export NIX_GHC="$HOME/.nix-profile/bin/ghc"
+    export NIX_GHCPKG="$HOME/.nix-profile/bin/ghc-pkg"
+    export NIX_GHC_DOCDIR="$HOME/.nix-profile/share/doc/ghc/html"
+    export NIX_GHC_LIBDIR="$HOME/.nix-profile/lib/ghc-${NIX_GHC_VERSION}"
+fi
 
