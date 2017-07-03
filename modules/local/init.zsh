@@ -40,7 +40,7 @@ function precmd() {
 
 [ -f ~/.bcrc ] &&  export BC_ENV_ARGS="-l $HOME/.bcrc"
 
-if (( ! $+commands[ghc] )); then
+if (( $+commands[ghc] )); then
     NIX_GHC_VERSION=$(ghc --numeric-version)
     export NIX_GHC="$HOME/.nix-profile/bin/ghc"
     export NIX_GHCPKG="$HOME/.nix-profile/bin/ghc-pkg"
