@@ -48,6 +48,7 @@ if (( $+commands[ghc] )); then
     export NIX_GHC_LIBDIR="$HOME/.nix-profile/lib/ghc-${NIX_GHC_VERSION}"
 fi
 
-if (( $+commands[ghc] )); then
+if (( $+commands[kubectl] )); then
     source <(kubectl completion zsh)
+    alias kc=kubectl
 fi
