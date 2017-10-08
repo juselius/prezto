@@ -51,4 +51,12 @@ fi
 if (( $+commands[kubectl] )); then
     source <(kubectl completion zsh)
     alias kc=kubectl
+    alias kkc='kubectl --namespace kube-system'
 fi
+if (( $+commands[helm] )); then
+    source <(helm completion zsh)
+fi
+#
+# temp workaround
+autoload -U compinit && compinit
+
